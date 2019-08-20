@@ -1,7 +1,9 @@
-<h1>Welcome!</h1>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="nav-link" href="/railway_stations">Список станцій</a>
+    <a class="nav-link" href="/trains">Список поїздів</a>
+    <a class="nav-link" href="/routes">Список маршрутів</a>
+  </div>
+</nav>
 
-<%= link_to 'Список станцій', railway_stations_path %>
-<br>
-<%= link_to 'Список поїздів', trains_path %>
-<br>
-<%= link_to 'Список маршрутів', routes_path %>
+<%= render 'layouts/footer' %>

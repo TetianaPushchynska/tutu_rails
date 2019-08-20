@@ -5,5 +5,31 @@
   <%= @railway_station.title %>
 </p>
 
+<% if @railway_station.routes.empty? %>
+  <p>Станція не входить в жодний маршрут</p>
+<% else %>
+  <p>Станція входить в такі маршрути:</p>
+  <ul>
+    <% @railway_station.routes.each do |route| %>
+     <li><%= route.title %></li>
+    <% end %>
+  </ul>
+<%end %>
+
+<% if @railway_station.trains.empty? %>
+  <p>До станції не входять жодні поїзда</p>
+<% else %>
+  <p>До станції входять такі поїзда:</p>
+  <ul>
+    <% @railway_station.trains.each do |train| %>
+      <li><%= train.number %></li>
+    <% end %>
+  </ul>
+<%end %>
+
+<%= link_to 'Create new route', new_route_path %>
+<br>
 <%= link_to 'Edit', edit_railway_station_path(@railway_station) %> |
 <%= link_to 'Back', railway_stations_path %>
+
+<%= render 'layouts/footer' %>

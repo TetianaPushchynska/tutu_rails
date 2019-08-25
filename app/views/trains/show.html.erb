@@ -5,5 +5,25 @@
   <%= @train.number %>
 </p>
 
+<p>
+  <strong>Поїзд знаходиться на станції:</strong>
+  <% if @train.railway_station.present? %>
+    <%= @train.railway_station.title %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<p>
+  <strong>Поїзд їде по такому маршруту:</strong>
+  <% if @train.route.present? %>
+    <%= @train.route.title %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
+
+<%= render 'layouts/footer' %>

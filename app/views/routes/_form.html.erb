@@ -1,0 +1,22 @@
+<%= form_with(model: route, local: true) do |form| %>
+  <%= render 'common/errors', resource: @route %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current_station, 'Current station' %>
+    <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :train, 'Train' %>
+    <%= form.collection_select(:train_id, Train.all, :id, :number) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "#{route.new_record? ? 'Create' : 'Update' }" %>
+  </div>
+<% end %>

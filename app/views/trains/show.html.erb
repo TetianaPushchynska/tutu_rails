@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Поїзд №</strong>
   <%= @train.number %>
 </p>
 
@@ -18,6 +18,50 @@
   <strong>Поїзд їде по такому маршруту:</strong>
   <% if @train.route.present? %>
     <%= @train.route.title %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<p>
+  <strong>Вагон №</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.number %>
+    <% end %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<p>
+  <strong>Тип вагона:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.kind %>
+    <% end %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<p>
+  <strong>Верхні місця:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.top_seat %>
+    <% end %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<p>
+  <strong>Нижні місця:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.lower_seat %>
+    <% end %>
   <% else %>
     Не вказано
   <% end %>

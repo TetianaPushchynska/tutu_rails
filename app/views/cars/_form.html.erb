@@ -1,0 +1,32 @@
+<%= form_with(model: car, local: true) do |form| %>
+  <%= render 'common/errors', resource: @car %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.select :kind, Car.kinds.keys %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lower_seat %>
+    <%= form.number_field :lower_seat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :top_seat %>
+    <%= form.number_field :top_seat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :train, 'Train' %>
+    <%= form.collection_select(:train_id, Train.all, :id, :number) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "#{car.new_record? ? 'Create' : 'Update' }" %>
+  </div>
+<% end %>

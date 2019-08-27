@@ -16,11 +16,6 @@
     <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
   </div>
 
-  <div class="field">
-    <%= form.label :cars, 'Car' %>
-    <%= form.collection_select(:car_id, Car.all, :id, :number) %>
-  </div>
-
   <div class="actions">
     <%= form.submit "#{train.new_record? ? 'Create' : 'Update' }" %>
   </div>

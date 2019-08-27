@@ -67,9 +67,11 @@
   <% end %>
 </p>
 
-<%= link_to 'Купити квиток', new_ticket_path %>
+<%= link_to 'Buy ticket', new_ticket_path %>
+<br>
+<%= link_to 'Add car', new_car_url %>
 <br>
 <%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Back to Trains', trains_path %>
 
 <%= render 'layouts/footer' %>

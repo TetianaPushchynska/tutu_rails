@@ -17,31 +17,24 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-
-    respond_to do |format|
       if @car.save
-        format.html { redirect_to @car, notice: 'Car was successfully created.' }
+        redirect_to @car, notice: 'Car was successfully created.'
       else
-        format.html { render :new }
+        render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @car.update(car_params)
-        format.html { redirect_to @car, notice: 'Car was successfully updated.' }
+        redirect_to @car, notice: 'Car was successfully updated.'
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   def destroy
     @car.destroy
-    respond_to do |format|
-      format.html { redirect_to cars_url, notice: 'Car was successfully destroyed.' }
-    end
+    redirect_to cars_url, notice: 'Car was successfully destroyed.'
   end
 
   private

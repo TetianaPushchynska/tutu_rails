@@ -1,72 +1,74 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Поїзд №</strong>
+  <strong>Train №</strong>
   <%= @train.number %>
 </p>
 
 <p>
-  <strong>Поїзд знаходиться на станції:</strong>
+  <strong>The train is at the station:</strong>
   <% if @train.railway_station.present? %>
     <%= @train.railway_station.title %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Поїзд їде по такому маршруту:</strong>
+  <strong>The train goes on such a route:</strong>
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Вагон №</strong>
+  <strong>Car №</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
       <%= car.number %>
     <% end %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Тип вагона:</strong>
+  <strong>Type of wagon:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
       <%= car.kind %>
     <% end %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Верхні місця:</strong>
+  <strong>Top places:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
       <%= car.top_seat %>
     <% end %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Нижні місця:</strong>
+  <strong>Bottom seats:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
       <%= car.lower_seat %>
     <% end %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
+<%= link_to 'Купити квиток', new_ticket_path %>
+<br>
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
 

@@ -46,10 +46,10 @@
 </p>
 
 <p>
-  <strong>Top places:</strong>
+  <strong>Top seats:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.top_seat %>
+      <%= car.top_seats %>
     <% end %>
   <% else %>
     Not specified
@@ -60,7 +60,7 @@
   <strong>Bottom seats:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.lower_seat %>
+      <%= car.bottom_seats %>
     <% end %>
   <% else %>
     Not specified

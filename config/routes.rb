@@ -2,6 +2,8 @@
 
 Rails.application.routes.draw do
   get 'welcome/index'
+  resources :cars
+  resources :tickets
   resources :routes
   resources :trains
   resources :railway_stations

@@ -1,0 +1,27 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <%= render 'common/errors', resource: @ticket %>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_station %>
+    <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_station %>
+    <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :train, 'Train' %>
+    <%= form.collection_select(:train_id, Train.all, :id, :number) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "#{ticket.new_record? ? 'Create' : 'Update' }" %>
+  </div>
+<% end %>

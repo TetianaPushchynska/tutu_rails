@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cars</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @cars.each do |car| %>
+    <tr>
+      <th>Number:</th>
+      <td><%= car.number %></td>
+      <td><%= link_to 'Show', car %></td>
+      <td><%= link_to 'Edit', edit_car_path(car) %></td>
+      <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <tr>
+      <th>Kind:</th>
+      <td><%= car.kind %></td>
+    </tr>
+    <tr>
+      <th>Lower seat:</th>
+      <td><%= car.lower_seat %></td>
+    </tr>
+    <tr>
+      <th>Top seat:</th>
+      <td><%= car.top_seat %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Car', new_car_path %>
+<br>
+<%= link_to 'Add Train', new_train_path %>
+<br>
+<%= link_to 'Back', welcome_index_path %>
+
+<%= render 'layouts/footer' %>

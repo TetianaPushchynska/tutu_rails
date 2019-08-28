@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @car.number %>
+</p>
+
+<p>
+  <strong>Kind:</strong>
+  <%= @car.kind %>
+</p>
+
+<p>
+  <strong>Lower seat:</strong>
+  <%= @car.lower_seat %>
+</p>
+
+<p>
+  <strong>Top seat:</strong>
+  <%= @car.top_seat %>
+</p>
+
+<p>
+  <strong>Вагон прикріплений до такого поїзда:</strong>
+  <% if @car.train.present? %>
+    <%= @car.train.number %>
+  <% else %>
+    Не вказано
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back to Cars', cars_path %>
+
+<%= render 'layouts/footer' %>

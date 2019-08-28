@@ -1,29 +1,77 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Train №</strong>
   <%= @train.number %>
 </p>
 
 <p>
-  <strong>Поїзд знаходиться на станції:</strong>
+  <strong>The train is at the station:</strong>
   <% if @train.railway_station.present? %>
     <%= @train.railway_station.title %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
 <p>
-  <strong>Поїзд їде по такому маршруту:</strong>
+  <strong>The train goes on such a route:</strong>
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
-    Не вказано
+    Not specified
   <% end %>
 </p>
 
+<p>
+  <strong>Car №</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.number %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Type of wagon:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.kind %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Top places:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.top_seat %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Bottom seats:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.lower_seat %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<%= link_to 'Buy ticket', new_ticket_path %>
+<br>
+<%= link_to 'Add car', new_car_url %>
+<br>
 <%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Back to Trains', trains_path %>
 
 <%= render 'layouts/footer' %>

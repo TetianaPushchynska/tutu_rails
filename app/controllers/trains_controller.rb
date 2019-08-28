@@ -17,31 +17,24 @@ class TrainsController < ApplicationController
 
   def create
     @train = Train.new(train_params)
-
-    respond_to do |format|
       if @train.save
-        format.html { redirect_to @train, notice: 'Train was successfully created.' }
+        redirect_to @train, notice: 'Train was successfully created.'
       else
-        format.html { render :new }
+        render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @train.update(train_params)
-        format.html { redirect_to @train, notice: 'Train was successfully updated.' }
+        redirect_to @train, notice: 'Train was successfully updated.'
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   def destroy
     @train.destroy
-    respond_to do |format|
-      format.html { redirect_to trains_url, notice: 'Train was successfully destroyed.' }
-    end
+    redirect_to trains_url, notice: 'Train was successfully destroyed.'
   end
 
   private

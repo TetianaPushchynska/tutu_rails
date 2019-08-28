@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @ticket.full_name %>
+</p>
+
+<p>
+  <strong>Start station:</strong>
+  <%= @ticket.railway_station.title %>
+</p>
+
+<p>
+  <strong>End station:</strong>
+  <%= @ticket.railway_station.title %>
+</p>
+
+<p>
+  <strong>Train:</strong>
+  <%= @ticket.train.number %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back to Tickets', tickets_path %>
+
+<%= render 'layouts/footer' %>

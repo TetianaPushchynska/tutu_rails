@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_133124) do
+ActiveRecord::Schema.define(version: 2019_08_26_131258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,12 +44,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_133124) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.string "number"
+    t.string "start_station"
+    t.string "end_station"
+    t.string "full_name"
+    t.integer "train_id"
+    t.integer "railway_station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "train_id"
     t.bigint "user_id"
-    t.index ["train_id"], name: "index_tickets_on_train_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
 
@@ -59,8 +61,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_133124) do
     t.datetime "updated_at", null: false
     t.bigint "route_id"
     t.bigint "railway_station_id"
-    t.bigint "car_id"
-    t.index ["car_id"], name: "index_trains_on_car_id"
     t.index ["railway_station_id"], name: "index_trains_on_railway_station_id"
     t.index ["route_id"], name: "index_trains_on_route_id"
   end

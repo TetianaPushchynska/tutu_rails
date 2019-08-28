@@ -5,5 +5,5 @@ class Train < ApplicationRecord
   belongs_to :railway_station
   has_many :tickets
   has_many :cars
-  validates :number, presence: true
+  validates :number, presence: true, uniqueness: true
 end

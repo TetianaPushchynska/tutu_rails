@@ -17,19 +17,19 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-      if @ticket.save
-        redirect_to @ticket, notice: 'Ticket was successfully created.'
-      else
-        render :new
-      end
+    if @ticket.save
+      redirect_to @ticket, notice: 'Ticket was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
-      if @ticket.update(ticket_params)
-        redirect_to @ticket, notice: 'Ticket was successfully updated.'
-      else
-        render :edit
-      end
+    if @ticket.update(ticket_params)
+      redirect_to @ticket, notice: 'Ticket was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy

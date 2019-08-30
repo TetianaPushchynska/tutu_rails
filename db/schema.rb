@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_131258) do
+ActiveRecord::Schema.define(version: 2019_08_30_064501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.integer "number"
     t.integer "kind", default: 0
-    t.integer "lower_seat"
-    t.integer "top_seat"
+    t.integer "bottom_seats"
+    t.integer "top_seats"
+    t.integer "side_top_seats"
+    t.integer "side_bottom_seats"
+    t.integer "serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "train_id"
@@ -46,7 +48,9 @@ ActiveRecord::Schema.define(version: 2019_08_26_131258) do
   create_table "tickets", force: :cascade do |t|
     t.string "start_station"
     t.string "end_station"
-    t.string "full_name"
+    t.string "first_name"
+    t.string "middle_name"
+    t.string "last_name"
     t.integer "train_id"
     t.integer "railway_station_id"
     t.datetime "created_at", null: false
@@ -69,6 +73,17 @@ ActiveRecord::Schema.define(version: 2019_08_26_131258) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

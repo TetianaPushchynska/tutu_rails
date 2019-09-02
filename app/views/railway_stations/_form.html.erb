@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= form.label :route, 'Current route' %>
-    <%= form.collection_select(:route_id, Route.all, :id, :title) %>
+    <%= form.select :route_ids, Route.all.collect {|x| [x.title, x.id]}, {}, :multiple => true  %>
   </div>
 
   <div class="field">

@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_064501) do
     t.integer "bottom_seats"
     t.integer "top_seats"
     t.integer "side_top_seats"
-    t.integer "side_bottom_seats"
+    t.integer "F"
     t.integer "serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

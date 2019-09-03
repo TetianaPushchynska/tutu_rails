@@ -13,7 +13,7 @@
   <% @cars.each do |car| %>
     <tr>
       <th>Number:</th>
-      <td><%= car.number %></td>
+      <td><%= car.serial_number %></td>
       <td><%= link_to 'Show', car %></td>
       <td><%= link_to 'Edit', edit_car_path(car) %></td>
       <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,12 +23,20 @@
       <td><%= car.kind %></td>
     </tr>
     <tr>
-      <th>Lower seat:</th>
-      <td><%= car.lower_seat %></td>
+      <th>Bottom seat:</th>
+      <td><%= car.bottom_seats %></td>
     </tr>
     <tr>
       <th>Top seat:</th>
-      <td><%= car.top_seat %></td>
+      <td><%= car.top_seats %></td>
+    </tr>
+    <tr>
+      <th>Side bottom seat:</th>
+      <td><%= car.side_bottom_seats %></td>
+    </tr>
+    <tr>
+      <th>Side top seat:</th>
+      <td><%= car.side_top_seats %></td>
     </tr>
   <% end %>
   </tbody>

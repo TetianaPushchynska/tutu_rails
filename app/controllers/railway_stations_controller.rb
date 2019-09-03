@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RailwayStationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_railway_station, only: %i[show edit update destroy]
 
   def index
@@ -44,6 +45,6 @@ class RailwayStationsController < ApplicationController
   end
 
   def railway_station_params
-    params.require(:railway_station).permit(:title)
+    params.require(:railway_station).permit(:title, route_ids: [])
   end
 end

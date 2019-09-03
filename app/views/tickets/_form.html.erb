@@ -2,8 +2,18 @@
   <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name %>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :middle_name %>
+    <%= form.text_field :middle_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
   </div>
 
   <div class="field">

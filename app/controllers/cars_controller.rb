@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CarsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_car, only: %i[show edit update destroy]
 
   def index
@@ -44,6 +45,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:number, :kind, :lower_seat, :top_seat, :train_id)
+    params.require(:car).permit(:serial_number, :kind, :bottom_seats,
+                                :top_seats, :side_bottom_seats, :side_top_seats, :train_id)
   end
 end

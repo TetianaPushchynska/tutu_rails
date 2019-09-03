@@ -27,7 +27,7 @@
   <strong>Car №</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.number %>
+      <%= car.serial_number %>
     <% end %>
   <% else %>
     Not specified
@@ -49,7 +49,7 @@
   <strong>Top places:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.top_seat %>
+      <%= car.top_seats %>
     <% end %>
   <% else %>
     Not specified
@@ -60,7 +60,29 @@
   <strong>Bottom seats:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.lower_seat %>
+      <%= car.bottom_seats %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Side bottom seats:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.side_bottom_seats %>
+    <% end %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Side top seats:</strong>
+  <% if @train.cars.present? %>
+    <% @train.cars.each do |car| %>
+      <%= car.side_top_seats %>
     <% end %>
   <% else %>
     Not specified

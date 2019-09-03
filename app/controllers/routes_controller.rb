@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RoutesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_route, only: %i[show edit update destroy]
 
   def index
@@ -44,6 +45,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:title)
+    params.require(:route).permit(:title, railway_station_ids: [])
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_064501) do
+ActiveRecord::Schema.define(version: 2019_09_05_185950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_064501) do
     t.integer "bottom_seats"
     t.integer "top_seats"
     t.integer "side_top_seats"
-    t.integer "F"
+    t.integer "side_bottom_seats"
     t.integer "serial_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 2019_08_30_064501) do
     t.integer "route_id"
   end
 
+  create_table "railway_stations_tickets", force: :cascade do |t|
+    t.integer "railway_station_id"
+    t.integer "ticket_id"
+  end
+
   create_table "routes", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -46,13 +51,10 @@ ActiveRecord::Schema.define(version: 2019_08_30_064501) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.string "start_station"
-    t.string "end_station"
     t.string "first_name"
     t.string "middle_name"
     t.string "last_name"
     t.integer "train_id"
-    t.integer "railway_station_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

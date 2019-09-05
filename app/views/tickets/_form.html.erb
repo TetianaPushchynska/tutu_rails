@@ -17,13 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :start_station %>
-    <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_station %>
-    <%= form.collection_select(:railway_station_id, RailwayStation.all, :id, :title) %>
+    <%= form.label :railway_station %>
+    <%= form.select :railway_station_ids, RailwayStation.all.collect {|x| [x.title, x.id]}, {}, :multiple => true  %>
   </div>
 
   <div class="field">

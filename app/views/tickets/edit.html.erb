@@ -1,8 +1,8 @@
-<h1>Editing Train</h1>
+<h1><%= t('.edit_ticket') %></h1>
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Show', @ticket %> |
-<%= link_to 'Back', tickets_path %>
+<%= link_to t('common.show'), @ticket %> |
+<%= link_to t('common.back'), tickets_path %>
 
 <%= render 'layouts/footer' %>

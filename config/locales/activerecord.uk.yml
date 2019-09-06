@@ -1,0 +1,29 @@
+uk:
+  activerecord:
+    models:
+      car: 'Вагон'
+      railway_station: 'Станція'
+      route: 'Маршрут'
+      ticket: 'Квиток'
+      train: 'Поїзд'
+    attributes:
+      car:
+        serial_number: 'Серійний номер'
+        kind: 'Тип'
+        bottom_seats: 'Нижні місця'
+        top_seats: 'Верхні місця'
+        side_bottom_seats: 'Бокові нижні місця'
+        sedi_top_seats: 'Бокові верхні місця'
+      railway_station:
+        title: 'Назва'
+      route:
+        title: 'Назва'
+      ticket:
+        first_name: 'Прізвище'
+        middle_name: "Ім'я"
+        last_name: 'По-батькові'
+      train:
+        number: 'Номер'
+    errors:
+      messages:
+        blank: 'не може бути пустим'

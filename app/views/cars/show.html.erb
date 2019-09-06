@@ -1,32 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong><%= t('.number') %>:</strong>
   <%= @car.serial_number %>
 </p>
 
 <p>
-  <strong>Kind:</strong>
+  <strong><%= t('.kind') %>:</strong>
   <%= @car.kind %>
 </p>
 
 <p>
-  <strong>Bottom seat:</strong>
+  <strong><%= t('.bottom_seat') %>:</strong>
   <%= @car.bottom_seats %>
 </p>
 
 <p>
-  <strong>Top seat:</strong>
+  <strong><%= t('.top_seat') %>:</strong>
   <%= @car.top_seats %>
 </p>
 
 <p>
-  <strong>Side top seat:</strong>
+  <strong><%= t('.side_bottom_seat') %>:</strong>
   <%= @car.side_top_seats %>
 </p>
 
 <p>
-  <strong>Side bottom seat:</strong>
+  <strong><%= t('.side_top_seat') %>:</strong>
   <%= @car.side_bottom_seats %>
 </p>
 
@@ -35,11 +35,11 @@
   <% if @car.train.present? %>
     <%= @car.train.number %>
   <% else %>
-    Не вказано
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back to Cars', cars_path %>
+<%= link_to t('.back'), cars_path %>
 
 <%= render 'layouts/footer' %>

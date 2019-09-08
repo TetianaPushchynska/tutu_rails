@@ -7,12 +7,12 @@
   </div>
 
   <div class="field">
-    <%= form.label :current_station, 'Current station' %>
+    <%= form.label :current_station, 'Поточна станція' %>
     <%= form.select :railway_station_ids, RailwayStation.all.collect {|x| [x.title, x.id]}, {}, :multiple => true  %>
   </div>
 
   <div class="field">
-    <%= form.label :train, 'Train' %>
+    <%= form.label :train, 'Поїзд' %>
     <%= form.collection_select(:train_id, Train.all, :id, :number) %>
   </div>
 

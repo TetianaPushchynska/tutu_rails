@@ -1,2 +1,88 @@
 uk:
-  hello: "Привіт"
+  common:
+    back: 'Назад'
+    edit: 'Редагувати'
+    show: 'Переглянути'
+    destroy: 'Видалити'
+    list_stations: 'Список станцій'
+    list_trains: 'Список поїздів'
+    list_routes: 'Список маршрутів'
+    list_cars: 'Список вагонів'
+    not_specified: 'Не вказано'
+    buy_ticket: 'Купити квиток'
+  cars:
+    new:
+    show:
+      number: 'Номер'
+      kind: 'Тип'
+      bottom_seat: 'Нижні місця'
+      top_seat: 'Верхні місця'
+      side_bottom_seat: 'Бокові нижні місця'
+      side_top_seat: 'Бокові верхні місця'
+      back: 'Назад до вагонів'
+    index:
+      number: 'Номер'
+      kind: 'Тип'
+      bottom_seat: 'Нижні місця'
+      top_seat: 'Верхні місця'
+      side_bottom_seat: 'Бокові нижні місця'
+      side_top_seat: 'Бокові верхні місця'
+    edit:
+      edit_car: 'Редагувати вагон'
+  railway_stations:
+    new:
+      title: 'Нова станція'
+    show:
+      title: 'Назва станції'
+      back: 'Назад до станцій'
+    index:
+      title: 'Станції'
+      title_one: 'Назва станції'
+      add_station: 'Додати станцію'
+    edit:
+      edit_railway_station: 'Редагувати станцію'
+  routes:
+    new:
+      title: 'Новий маршрут'
+    show:
+      title: 'Назва маршруту'
+      back: 'Назад до маршруту'
+    index:
+      title: 'Маршрути'
+      title_one: 'Назва маршруту'
+      add_route: 'Додати маршрут'
+    edit:
+      edit_route: 'Редагувати маршрут'
+  tickets:
+    new:
+      about_ticket: 'Дані квитка'
+    show:
+      first_name: 'Прізвище'
+      middle_name: "Ім'я"
+      last_name: 'По-батькові'
+      start_station: 'Початкова станція'
+      end_station: 'Кінцева станція'
+      train: 'Поїзд'
+      back: 'Назад до квитків'
+    index:
+      sold_tickets: 'Продані квитки'
+      full_name: 'ПІП'
+    edit:
+      edit-ticket: 'Редагувати дані квитка'
+  trains:
+    new:
+      new_train: 'Новий поїзд'
+    show:
+      train_number: Поїзд'
+      current_station: 'Поїзд знаходиться на такій станції'
+      current_route: 'Поїзд їде по такому маршруту'
+      car_number: 'Вагон'
+      type_car: 'Тип вагону'
+      top_seats: 'Верхні місця'
+      bottom_seats: 'Нижні місця'
+      side_bottom_seats: 'Бокові нижні місця'
+      side_top_seats: 'Бокові верхні місця'
+      back: 'Назад до поїздів'
+    index:
+    edit:
+      edit_train: 'Редагувати поїзд'

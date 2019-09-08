@@ -12,30 +12,30 @@
   <tbody>
   <% @cars.each do |car| %>
     <tr>
-      <th>Number:</th>
+      <th><%= t('.number') %>:</th>
       <td><%= car.serial_number %></td>
-      <td><%= link_to 'Show', car %></td>
-      <td><%= link_to 'Edit', edit_car_path(car) %></td>
-      <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('common.show'), car %></td>
+      <td><%= link_to t('common.edit'), edit_car_path(car) %></td>
+      <td><%= link_to t('common.destroy'), car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <tr>
-      <th>Kind:</th>
+      <th><%= t('.kind') %>:</th>
       <td><%= car.kind %></td>
     </tr>
     <tr>
-      <th>Bottom seat:</th>
+      <th><%= t('.bottom_seat') %>:</th>
       <td><%= car.bottom_seats %></td>
     </tr>
     <tr>
-      <th>Top seat:</th>
+      <th><%= t('.top_seat') %>:</th>
       <td><%= car.top_seats %></td>
     </tr>
     <tr>
-      <th>Side bottom seat:</th>
+      <th><%= t('.side_bottom_seat') %>:</th>
       <td><%= car.side_bottom_seats %></td>
     </tr>
     <tr>
-      <th>Side top seat:</th>
+      <th><%= t('.side_top_seat') %>:</th>
       <td><%= car.side_top_seats %></td>
     </tr>
   <% end %>
@@ -48,6 +48,6 @@
 <br>
 <%= link_to 'Add Train', new_train_path %>
 <br>
-<%= link_to 'Back', welcome_index_path %>
+<%= link_to t('common.back'), welcome_index_path %>
 
 <%= render 'layouts/footer' %>

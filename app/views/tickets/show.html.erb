@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>First name:</strong>
+  <strong><%= t('.first_name') %>:</strong>
   <%= @ticket.first_name %>
 </p>
 
 <p>
-  <strong>Middle name:</strong>
+  <strong><%= t('.middle_name') %>:</strong>
   <%= @ticket.middle_name %>
 </p>
 
 <p>
-  <strong>Last name:</strong>
+  <strong><%= t('.last_name') %>:</strong>
   <%= @ticket.last_name %>
 </p>
 
 <p>
-  <strong>Start station:</strong>
-  <%= @ticket.railway_station.title %>
+  <strong><%= t('.start_station') %>:</strong>
+  <%= @ticket.railway_stations.first.title %>
 </p>
 
 <p>
-  <strong>End station:</strong>
-  <%= @ticket.railway_station.title %>
+  <strong><%= t('.end_station') %>:</strong>
+  <%= @ticket.railway_stations.last.title %>
 </p>
 
 <p>
-  <strong>Train:</strong>
+  <strong><%= t('.train') %>:</strong>
   <%= @ticket.train.number %>
 </p>
 
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back to Tickets', tickets_path %>
+<%= link_to t('common.edit'), edit_ticket_path(@ticket) %> |
+<%= link_to t('.back'), tickets_path %>
 
 <%= render 'layouts/footer' %>

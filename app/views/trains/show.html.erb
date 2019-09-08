@@ -1,99 +1,99 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Train №</strong>
+  <strong><%= t('.train_number') %> №</strong>
   <%= @train.number %>
 </p>
 
 <p>
-  <strong>The train is at the station:</strong>
+  <strong><%= t('.current_station') %>:</strong>
   <% if @train.railway_station.present? %>
     <%= @train.railway_station.title %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>The train goes on such a route:</strong>
+  <strong><%= t('.current_route') %>:</strong>
   <% if @train.route.present? %>
     <%= @train.route.title %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Car №</strong>
+  <strong><%= t('.car_number') %> №</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.serial_number %>
+      <%= car.serial_number %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Type of wagon:</strong>
+  <strong><%= t('.type_car') %>:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.kind %>
+      <%= car.kind %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Top places:</strong>
+  <strong><%= t('.top_seats') %>:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.top_seats %>
+      <%= car.top_seats %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Bottom seats:</strong>
+  <strong><%= t('.bottom_seats') %>:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.bottom_seats %>
+      <%= car.bottom_seats %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Side bottom seats:</strong>
+  <strong><%= t('.side_bottom_seats') %>:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.side_bottom_seats %>
+      <%= car.side_bottom_seats %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
 <p>
-  <strong>Side top seats:</strong>
+  <strong><%= t('.side_top_seats') %>:</strong>
   <% if @train.cars.present? %>
     <% @train.cars.each do |car| %>
-      <%= car.side_top_seats %>
+      <%= car.side_top_seats %>;
     <% end %>
   <% else %>
-    Not specified
+    <%= t('common.not_specified') %>
   <% end %>
 </p>
 
-<%= link_to 'Buy ticket', new_ticket_path %>
+<%= link_to t('common.buy_ticket'), new_ticket_path %>
 <br>
 <%= link_to 'Add car', new_car_url %>
 <br>
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back to Trains', trains_path %>
+<%= link_to t('common.edit'), edit_train_path(@train) %> |
+<%= link_to t('.back'), trains_path %>
 
 <%= render 'layouts/footer' %>

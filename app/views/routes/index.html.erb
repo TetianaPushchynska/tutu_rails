@@ -1,9 +1,9 @@
-<h1>Routes</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
   <tr>
-    <th>Title</th>
+    <th><%= t('.title_one') %>:</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -12,9 +12,9 @@
   <% @routes.each do |route| %>
     <tr>
       <td><b><%= route.title %></b></td>
-      <td><%= link_to 'Show', route %></td>
-      <td><%= link_to 'Edit', edit_route_path(route) %></td>
-      <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('common.show'), route %></td>
+      <td><%= link_to t('common.edit'), edit_route_path(route) %></td>
+      <td><%= link_to t('common.destroy'), route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -22,9 +22,9 @@
 
 <br>
 
-<%= link_to 'Add Route', new_route_path %>
+<%= link_to t('.add_route'), new_route_path %>
 <br>
-<%= link_to 'Back', welcome_index_path %>
+<%= link_to t('common.back'), welcome_index_path %>
 
 <%= render 'layouts/footer' %>
 

@@ -1,7 +1,7 @@
-<h1>Дані квитка</h1>
+<h1><%= t('.about_ticket') %></h1>
 
 <%= render 'form', ticket: @ticket %>
 
-<%= link_to 'Back', tickets_path %>
+<%= link_to t('common.back'), tickets_path %>
 
 <%= render 'layouts/footer' %>

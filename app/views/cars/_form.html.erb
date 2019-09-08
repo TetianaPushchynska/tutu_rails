@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :train, 'Train' %>
-    <%= form.collection_select(:train_ids, Train.all, :id, :number) %>
+    <%= form.label :train, 'Поїзд' %>
+    <%= form.collection_select(:train_id, Train.all, :id, :number) %>
   </div>
 
   <div class="actions">

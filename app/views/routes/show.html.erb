@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Route:</strong>
+  <strong><%= t('.title') %>:</strong>
   <%= @route.title %>
 </p>
 
@@ -28,8 +28,8 @@
 <%end %>
 
 
-<%= link_to 'Edit', edit_route_path(@route) %> |
-<%= link_to 'Back to Routes', routes_path %>
+<%= link_to t('common.edit'), edit_route_path(@route) %> |
+<%= link_to t('.back'), routes_path %>
 
 <%= render 'layouts/footer' %>
 

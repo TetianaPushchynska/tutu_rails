@@ -1,9 +1,9 @@
-<h1>Tickets sold</h1>
+<h1><%= t('.sold_tickets') %></h1>
 
 <table>
   <thead>
   <tr>
-    <th>Full name</th>
+    <th><%= t('.full_name') %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -14,9 +14,9 @@
       <td><%= ticket.last_name %></td>
       <td><%= ticket.first_name %></td>
       <td><%= ticket.middle_name %></td>
-      <td><%= link_to 'Show', ticket %></td>
-      <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-      <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to t('common.show'), ticket %></td>
+      <td><%= link_to t('common.edit'), edit_ticket_path(ticket) %></td>
+      <td><%= link_to t('common.destroy'), ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
   </tbody>
@@ -24,8 +24,8 @@
 
 <br>
 
-<%= link_to 'Купити квиток', new_ticket_path %>
+<%= link_to t('common.buy_ticket'), new_ticket_path %>
 <br>
-<%= link_to 'Back', welcome_index_path %>
+<%= link_to t('common.back'), welcome_index_path %>
 
 <%= render 'layouts/footer' %>
